@@ -1,21 +1,33 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+<template>
+  <div>
+    <h1 class="green">{{friends}}</h1>
+  </div>
+</template>
+
+<script>
+export default {
+  data(){
+    return {
+      friends: [
+        {
+          id: '87',
+          name: 'Jim McGuire',
+          phone: '42 9999 9999',
+          email: 'jim@vue.com'
+        },
+        {
+          id: '18',
+          name: 'Jean Barber',
+          phone: '42 9999 8888',
+          email: 'jean@vue.com'
+        },
+      ]
+    }
+  }
+}
+
 </script>
 
-<template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
-</template>
 
 <style scoped>
 header {
@@ -25,6 +37,13 @@ header {
 .logo {
   display: block;
   margin: 0 auto 2rem;
+}
+
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
 }
 
 @media (min-width: 1024px) {
